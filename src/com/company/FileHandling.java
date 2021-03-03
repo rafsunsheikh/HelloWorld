@@ -17,7 +17,7 @@ public class FileHandling {
         }
         catch (Exception e)
         {
-            System.out.println("An error occoured");
+            System.out.println("An error occurred");
             e.printStackTrace();
         }
     }
@@ -44,7 +44,7 @@ public class FileHandling {
         }
         catch (Exception e)
         {
-            System.out.println("Error occured to read file");
+            System.out.println("Error occurred to read file");
             e.printStackTrace();
         }
     }
@@ -57,11 +57,8 @@ public class FileHandling {
         }
         catch (Exception e)
         {
-            System.out.println("Error occured while writing to the file");
+            System.out.println("Error occurred while writing to the file");
             e.printStackTrace();
         }
-
     }
-
-
 }
