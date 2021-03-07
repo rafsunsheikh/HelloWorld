@@ -12,15 +12,9 @@ public class Main {
 
     public static void main(String[] args)  {
         //taking user input
-        String userNameInput;
-        String password;
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("User Name: ");
-        userNameInput = scanner.nextLine();
-
-        System.out.print("Password: ");
-        password = scanner.nextLine();
+        UserInput userInput = new UserInput();
+        String userNameInput = userInput.getUserName();
+        String passwordInput = userInput.getPassword();
 
         UserProfileDetails user1;
 
@@ -37,7 +31,7 @@ public class Main {
             Connection con = DriverManager.getConnection(url, uName, pass);
             Statement st = con.createStatement();
 
-            ResultSet rs = st.executeQuery("select * from user natural join UserExperience natural join UserDetails where userName = '"+userNameInput+"' AND PASSWORD = '"+password+"'");
+            ResultSet rs = st.executeQuery("select * from user natural join UserExperience natural join UserDetails where userName = '"+userNameInput+"' AND PASSWORD = '"+passwordInput+"'");
 
             while (rs.next()) {
                 user1 = createProfile(rs.getString(2), rs.getString(3),
@@ -60,12 +54,6 @@ public class Main {
         }
         //Database connection and retrieve ends here
 
-        //File Handling
-        FileHandling file1 = new FileHandling();
-        file1.createFile();
-        file1.fileInformation();
-        file1.writeToFile(response);
-        file1.readFromFile();
 
     }
 
