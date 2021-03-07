@@ -11,6 +11,8 @@ public class UserProfileDetails {
     private String email;
 
     Address address = new Address();
+    UserExperience userExperience = new UserExperience();
+    UserDetails userDetails = new UserDetails();
 
     //All the set methods
     public void setFullName(String fullName){
