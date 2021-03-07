@@ -17,6 +17,7 @@ public class Main {
         String passwordInput = userInput.getPassword();
 
         UserProfileDetails user1;
+        CreateProfile profile = new CreateProfile();
 
         //Converting to json format
         Gson json = new Gson();
@@ -34,7 +35,7 @@ public class Main {
             ResultSet rs = st.executeQuery("select * from user natural join UserExperience natural join UserDetails where userName = '"+userNameInput+"' AND PASSWORD = '"+passwordInput+"'");
 
             while (rs.next()) {
-                user1 = createProfile(rs.getString(2), rs.getString(3),
+                user1 = profile.createProfile(rs.getString(2), rs.getString(3),
                         rs.getString(4), rs.getString(5),
                         rs.getString(6),rs.getString(7),
                         rs.getString(8), rs.getString(9),
@@ -54,31 +55,6 @@ public class Main {
         }
         //Database connection and retrieve ends here
 
-
     }
 
-    public static UserProfileDetails createProfile(String userName, String password, String fullName,
-                                                   String phone, String email, String village, String postOffice,
-                                                   String thana, String district, String zipCode,
-                                                   String education, String workExperience,
-                                                   String hobby, String favouriteColor, String favouriteFood){
-        UserProfileDetails user = new UserProfileDetails();
-        user.setUserName(userName);
-        user.setPassword(password);
-        user.setFullName(fullName);
-        user.setPhone(phone);
-        user.setEmail(email);
-        user.address.setVillage(village);
-        user.address.setPostOffice(postOffice);
-        user.address.setThana(thana);
-        user.address.setDistrict(district);
-        user.address.setZipCode(zipCode);
-        user.userExperience.setEducation(education);
-        user.userExperience.setWorkExperience(workExperience);
-        user.userDetails.setHobby(hobby);
-        user.userDetails.setFavouriteColor(favouriteColor);
-        user.userDetails.setFavouriteFood(favouriteFood);
-
-        return user;
-    }
 }
