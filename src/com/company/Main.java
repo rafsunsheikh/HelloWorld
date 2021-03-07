@@ -35,7 +35,7 @@ public class Main {
             ResultSet rs = st.executeQuery("select * from user natural join UserExperience natural join UserDetails where userName = '"+userNameInput+"' AND PASSWORD = '"+passwordInput+"'");
 
             while (rs.next()) {
-                user1 = profile.createProfile(rs.getString(2), rs.getString(3),
+                user1 = profile.createProfile(rs.getString(1), rs.getString(3),
                         rs.getString(4), rs.getString(5),
                         rs.getString(6),rs.getString(7),
                         rs.getString(8), rs.getString(9),
