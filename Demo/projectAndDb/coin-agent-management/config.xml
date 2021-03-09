@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <!-- 
+        Server port number
+    -->
+    <serverPort>9090</serverPort>
+    
+    <!--
+        Idle session data clear interval time in second
+    -->
+    <sessionClear>604800</sessionClear>
+        
+    <!--
+        Server connection close time in second for idle connection
+    -->
+    <keepAliveTimeOut>15</keepAliveTimeOut>
+        
+    <!--
+        Keep-Alive max value; Max number of request serve by each persistant connection
+    -->
+    <keepAliveMaxValue>100</keepAliveMaxValue>
+        
+    <!--
+        Server log status check
+    -->
+    <logStatus>true</logStatus>
+
+    <!-- 
+        MaxClient means number of thread.
+        How many thread concurrently process client request.
+    -->
+    <maxClient>1024</maxClient>
+    
+    <!--
+        Filter for all rest api.
+    --> 
+    <filter>com.coinmanagement.common.RestFilter</filter>
+  
+    <!--
+        List of all virtual hosts Server gonna serve
+    -->
+    <vhost>
+        <webSite>127.0.0.1:9090</webSite>
+        <contextFolder>contents</contextFolder>
+    </vhost>
+</root>

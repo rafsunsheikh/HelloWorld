@@ -1,0 +1,45 @@
+request url: http://127.0.0.1:9090/api/agent/login
+Method: POST
+Request:
+{
+    "email":"pr@yopmail.com",
+    "password":"12345"
+}
+
+fail response:
+{
+    "sucs": false,
+    "mg": "Email or password does not match",
+    "rc": 23
+}
+
+request:
+{
+    "email":"pr@yopmail.com",
+    "password":"123456"
+}
+
+success response:
+{
+    "sucs": true,
+    "mg": "Agent login successfully",
+    "rc": 0,
+    "agentDetails": {
+        "active": true,
+        "agentId": 4,
+        "parentId": -1,
+        "userId": "pr@yopmail.com",
+        "ringId": 0,
+        "name": "pr parent",
+        "mobileNo": "123456789",
+        "address": "Dhaka%20BD",
+        "type": 1
+    },
+    "agentWalletStatus": [
+        {
+            "agentId": 4,
+            "coinId": 1,
+            "coinAmount": 5819
+        }
+    ]
+}

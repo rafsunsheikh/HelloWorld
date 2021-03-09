@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <rewrite>
+        <pattern>profile\/\d{10}\/</pattern>
+        <url>index.html</url>
+    </rewrite>
+    <rewrite>
+        <pattern>index.html</pattern>
+        <url>/</url>
+    </rewrite>
+</root>

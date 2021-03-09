@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+     <httprequest>
+        <name>/</name>
+        <class>com.coinmanagement.app.Index</class>
+        <allow-method>GET</allow-method>
+    </httprequest>
+   
+    <httprequest>
+        <name>api/agent/transaction/getagentselltransactionhistory</name>
+        <class>com.coinmanagement.api.agent.transaction.GetAgentSellTransactionHistory</class>
+        <allow-method>POST</allow-method>
+    </httprequest>
+    
+    <httprequest>
+        <name>api/agent/transaction/getagentbuytransactionhistory</name>
+        <class>com.coinmanagement.api.agent.transaction.GetAgentBuyTransactionHistory</class>
+        <allow-method>POST</allow-method>
+    </httprequest>
+     
+    <httprequest>
+        <name>api/coinbuysell/agentSellCoinToClient</name>
+        <class>com.coinmanagement.api.coinbuysell.AgentSellCoinToClient</class>
+        <allow-method>POST</allow-method>
+    </httprequest>
+       
+    <httprequest>
+        <name>api/agent/registration</name>
+        <class>com.coinmanagement.api.agent.AgentRegistration</class>
+        <allow-method>POST</allow-method>
+    </httprequest>
+    
+    <httprequest>
+        <name>api/agent/verification</name>
+        <class>com.coinmanagement.api.agent.AgentEmailVerification</class>
+        <allow-method>POST</allow-method>
+    </httprequest>
+    
+    <httprequest>
+        <name>api/agent/login</name>
+        <class>com.coinmanagement.api.agent.AgentLogin</class>
+        <allow-method>POST</allow-method>
+    </httprequest>
+    
+    <httprequest>
+        <name>api/agent/getwalletinfo</name>
+        <class>com.coinmanagement.api.agent.AgentWalletInfo</class>
+        <allow-method>GET</allow-method>
+        <allow-method>POST</allow-method>
+    </httprequest>
+    
+    <httprequest>
+        <name>api/agent/passwordchange</name>
+        <class>com.coinmanagement.api.agent.AgentPasswordReset</class>        
+        <allow-method>POST</allow-method>
+    </httprequest>
+   
+    <httprequest>
+        <name>api/agent/pinchange</name>
+        <class>com.coinmanagement.api.agent.AgentPinReset</class>        
+        <allow-method>POST</allow-method>
+    </httprequest>
+   
+    <httprequest>
+        <name>api/agent/getpasswordresettoken</name>
+        <class>com.coinmanagement.api.agent.GetPasswordResetToken</class>        
+        <allow-method>POST</allow-method>
+        <allow-method>GET</allow-method>
+    </httprequest>
+         
+    <httprequest>
+        <name>api/agent/passwordresetwithtoken</name>
+        <class>com.coinmanagement.api.agent.AgentPasswordResetWithToken</class>        
+        <allow-method>POST</allow-method>
+    </httprequest>
+    
+    <httprequest>
+        <name>api/agent/edit</name>
+        <class>com.coinmanagement.api.agent.EditAgentInfo</class>        
+        <allow-method>POST</allow-method>
+    </httprequest>
+    
+    <httprequest>
+        <name>api/agent/resellercointransfer</name>
+        <class>com.coinmanagement.api.agent.transaction.AgentToAgentCoinTransfer</class>        
+        <allow-method>POST</allow-method>
+    </httprequest>
+    
+    <httprequest>
+        <name>api/agent/getchild</name>
+        <class>com.coinmanagement.api.agent.GetResellerChildList</class>        
+        <allow-method>GET</allow-method>
+    </httprequest>
+    
+    <httprequest>
+        <name>api/agent/refundrequest</name>
+        <class>com.coinmanagement.api.agent.transaction.AgentRefundRequest</class>
+        <allow-method>POST</allow-method>
+    </httprequest>
+
+    <httprequest>
+        <name>api/reload/reloadloaders</name>
+        <class>com.coinmanagement.api.reload.ReloadLoader</class>
+        <allow-method>POST</allow-method>
+    </httprequest>
+    
+    <httprequest>
+        <name>api/ringbit/preordertransactionhistory</name>
+        <class>com.coinmanagement.api.agent.ringbit.GetAgentPreOrderTransactionHistory</class>
+        <allow-method>POST</allow-method>
+    </httprequest>
+    
+    <httprequest>
+        <name>api/ringbit/acceptordeclinepreorder</name>
+        <class>com.coinmanagement.api.agent.ringbit.AcceptOrDeclinePreOrderTransaction</class>
+        <allow-method>POST</allow-method>
+    </httprequest>
+    
+    <httprequest>
+        <name>api/goldcoin/agent/regverifyfail</name>
+        <class>com.coinmanagement.api.goldcoin.agent.RegistrationOrVerificationFailLog</class>
+        <allow-method>POST</allow-method>
+    </httprequest>
+    
+    <httprequest>
+        <name>api/agent/editChild</name>
+        <class>com.coinmanagement.api.agent.EditChildInfo</class>
+        <allow-method>POST</allow-method>
+    </httprequest>
+</root>
