@@ -6,17 +6,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args)  {
         //taking user input
-        UserInput userInput = new UserInput();
-        String userNameInput = userInput.getUserName();
-        String passwordInput = userInput.getPassword();
+        StudentInput studentInput = new StudentInput();
+        int studentIdInput = studentInput.getStudentId();
 
-        UserProfileDetails user1;
+
+        StudentProfileDetails user1;
         CreateProfile profile = new CreateProfile();
 
         //Converting to json format
@@ -25,28 +24,24 @@ public class Main {
 
         //connection with database
         try {
-            String url = "jdbc:mysql://localhost:3306/userprofile";
+            String url = "jdbc:mysql://localhost:3306/mist";
             String uName = "root";
             String pass = "1234";
             Class.forName("com.mysql.cj.jdbc.Driver"); //Class forName
             Connection con = DriverManager.getConnection(url, uName, pass);
             Statement st = con.createStatement();
 
-            ResultSet rs = st.executeQuery("select * from user natural join UserExperience natural join UserDetails where userName = '"+userNameInput+"' AND PASSWORD = '"+passwordInput+"'");
+            ResultSet rs = st.executeQuery("select * from student where studentId = '"+studentIdInput+"' ");
 
             if(!rs.next()) {
-                System.out.println("Wrong Username or Password");
+                System.out.println("Student Id not matched");
             }
             else{
 
-                user1 = profile.createProfile(rs.getString(1), rs.getString(3),
+                user1 = profile.createProfile(rs.getInt(2), rs.getString(3),
                         rs.getString(4), rs.getString(5),
                         rs.getString(6),rs.getString(7),
-                        rs.getString(8), rs.getString(9),
-                        rs.getString(10), rs.getString(11),
-                        rs.getString(12), rs.getString(13),
-                        rs.getString(14), rs.getString(15),
-                        rs.getString(16));
+                        rs.getString(8));
                 response = json.toJson(user1);
                 System.out.println("Json created successfully\n" + response);
             }

@@ -6,8 +6,8 @@ public class Address {
     private String village;
     private String postOffice;
     private String thana;
-    private String district;
-    private String zipCode;
+    private String zilla;
+    private String country;
 
     //all the get methods
     public void setVillage(String village){
@@ -19,11 +19,11 @@ public class Address {
     public void setThana(String thana){
         this.thana = thana;
     }
-    public void setDistrict(String district){
-        this.district = district;
+    public void setZilla(String zilla){
+        this.zilla = zilla;
     }
-    public void setZipCode(String zipCode){
-        this.zipCode = zipCode;
+    public void setCountry(String country){
+        this.country = country;
     }
 
     //all the get methods
@@ -36,11 +36,11 @@ public class Address {
     public String getThana(){
         return thana;
     }
-    public String getDistrict(){
-        return district;
+    public String getZilla(){
+        return zilla;
     }
-    public String getZipCode(){
-        return zipCode;
+    public String getCountry(){
+        return country;
     }
 
 }
